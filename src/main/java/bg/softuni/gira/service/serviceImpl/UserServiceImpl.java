@@ -29,4 +29,10 @@ userRepository.save(modelMapper.map(userServiceModel, User.class));
             .map(user -> modelMapper.map(user,UserServiceModel.class)).orElse(null);
 
     }
+
+    @Override
+    public User findByEmail(String email) {
+
+        return userRepository.findByEmail(email).orElse(null);
+    }
 }
